@@ -6,7 +6,10 @@ class HomepageTest < Capybara::Rails::TestCase
     assert_selector '.doc',"copy your content"
   end
 
-  test "homepage has a form to enter your content"
+  test "homepage has a form to enter your content" do
+    visit root_path
+    assert_selector "textarea#cleaner_content"
+  end
 
   test "homepage has an option for markdown content"
 end

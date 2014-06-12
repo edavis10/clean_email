@@ -7,3 +7,10 @@
 
   <p><em>Your content is <strong>not</strong> stored on any servers, other than to generate a template for you.</em></p>
 </div>
+
+<%= form_for :cleaner, url: cleaner_create_path do |form| %>
+  <label for="cleaner_content">Your email content</label>
+  <%= form.text_area :content, cols: 80, rows: 20 %>
+
+  <%= form.submit "Clean" %>
+<% end %>
