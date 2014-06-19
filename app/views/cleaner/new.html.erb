@@ -12,5 +12,7 @@
   <label for="cleaner_content">Your email content</label>
   <%= form.text_area :content, cols: 80, rows: 20 %>
 
+  <label for="cleaner_markdown">Markdown content?</label>
+  <%= form.check_box :markdown %>
   <%= form.submit "Clean" %>
 <% end %>

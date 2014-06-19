@@ -11,5 +11,8 @@ class HomepageTest < Capybara::Rails::TestCase
     assert_selector "textarea#cleaner_content"
   end
 
-  test "homepage has an option for markdown content"
+  test "homepage has an option for markdown content" do
+    visit root_path
+    assert_selector "input[name='cleaner[markdown]']"
+  end
 end
