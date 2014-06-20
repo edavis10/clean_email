@@ -10,6 +10,8 @@ require "minitest/rails/capybara"
 # Uncomment for awesome colorful output
 # require "minitest/pride"
 
+Minitest::Reporters.use! MiniTest::Reporters::SpecReporter.new
+
 class ActiveSupport::TestCase
     ActiveRecord::Migration.check_pending!
 

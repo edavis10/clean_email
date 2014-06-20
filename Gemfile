@@ -41,4 +41,5 @@ gem 'spring',        group: :development
 group :test do
   gem "minitest-rails"
   gem "minitest-rails-capybara"
+  gem "minitest-reporters"
 end
