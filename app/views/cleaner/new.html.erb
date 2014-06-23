@@ -16,3 +16,13 @@
   <%= form.check_box :markdown %>
   <%= form.submit "Clean" %>
 <% end %>
+
+<% if @cleaner.content.present? %>
+<div id="plain-text">
+  <h2>Plain text</h2>
+  <pre>
+  <%= @cleaner.plain_text %>
+  </pre>
+</div>
+
+<% end %>

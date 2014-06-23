@@ -4,5 +4,7 @@ class CleanerController < ApplicationController
   end
 
   def create
+    @cleaner = Cleaner.new(params[:cleaner])
+    render :new
   end
 end
