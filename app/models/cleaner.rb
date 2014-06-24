@@ -1,4 +1,6 @@
 class Cleaner
+  include ActionView::Helpers::TextHelper
+
   attr_accessor :content
   attr_accessor :markdown
 
@@ -8,7 +10,8 @@ class Cleaner
     end unless attributes.nil?
   end
 
+  # Returns the text/plain version of the email, wrapped to 67 columns (width)
   def plain_text
-    @content
+    word_wrap(content, line_width: 67)
   end
 end
