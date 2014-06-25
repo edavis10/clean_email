@@ -13,3 +13,4 @@
  *= require_tree .
  *= require_self
  */
+pre { max-width: 100%; overflow: auto; }
