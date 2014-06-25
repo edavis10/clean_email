@@ -18,10 +18,30 @@
 <% end %>
 
 <% if @cleaner.content.present? %>
+<div id="html-text">
+  <h2>HTML text</h2>
+
+  <pre>
+    <%= @cleaner.html_text %>
+  </pre>
+
+  <iframe id="html-preview" src="about:blank" width="100%" height="100%"></iframe>
+
+  <script type="text/template" id="html-content">
+    <%= @cleaner.html_text %>
+  </script>
+
+  <script type="text/javascript">
+    doc = document.getElementById('html-preview').contentWindow.document;
+    doc.write($('#html-content').html());
+  </script>
+
+</div>
+
 <div id="plain-text">
   <h2>Plain text</h2>
   <pre>
-  <%= @cleaner.plain_text %>
+    <%= @cleaner.plain_text %>
   </pre>
 </div>
 

@@ -14,4 +14,8 @@ class Cleaner
   def plain_text
     word_wrap(content, line_width: 67)
   end
+
+  def html_text
+    content
+  end
 end
