@@ -16,6 +16,14 @@ class Cleaner
   end
 
   def html_text
-    content
+    if markdown?
+      Maruku.new(content).to_html.strip
+    else
+      content
+    end
+  end
+
+  def markdown?
+    markdown.present? && markdown.to_s != "0"
   end
 end

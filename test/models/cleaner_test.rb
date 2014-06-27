@@ -14,4 +14,11 @@ class CleanerTest < ActiveSupport::TestCase
     assert_equal "This line should word wrap around column 67 but without breaking\nthe word", Cleaner.new(:content => "This line should word wrap around column 67 but without breaking the word").plain_text
   end
 
+  test "#html_text should return the content" do
+    assert_equal "Hello HTML", Cleaner.new(:content => "Hello HTML").html_text
+  end
+
+  test "#html_text should convert the content into Markdown when enabled" do
+    assert_equal "<p>Hello <em>markdown</em></p>", Cleaner.new(:content => "Hello *markdown*", :markdown => '1').html_text
+  end
 end
